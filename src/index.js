@@ -17,13 +17,23 @@ if (args.length >= 2) {
     min = parseMin;
     max = parseMax;
   } else {
-    console.log("🚫 Rango invalido. Usando valores por defectp (1 - 100).");
+    console.log(
+      "🚫 Rango invalido. Se debe usar valores por defecto (1 a 100)."
+    );
+    //return; // <--Utilizo para detener el programa ya que los argumentos no son validos
+
+    // Tambien puedo utilizar metodos propios de Node.JS
+    // process es un objeto global de Node.js.
+    // .exit() es un método de ese objeto que finaliza el programa.
+    // El número que le pasas (0, 1, etc.) es un código de salida:
+    // 0 → terminó correctamente.
+    // 1 (u otro distinto de 0) → terminó con error.
+    process.exit(1); // <--Utilizo para detener el programa ya que los argumentos no son validos
   }
 }
 
 // Se crea la logica para los numeros aleatorios
 const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
 console.log(
-  `Numero aleatorio generado entre ${min} y ${max} : ${randomNumber}`
+  `🎲 Numero aleatorio generado entre ${min} y ${max} : ${randomNumber}`
 );

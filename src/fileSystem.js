@@ -6,3 +6,7 @@ const fileName = "example1.txt";
 
 fs.writeFileSync(fileName, "Hello world. Este es el archivo de ejemplo");
 console.log("Archivo creado correctamente");
+
+//Leer archivo
+const content = fs.readFileSync(fileName, "utf-8");
+console.log("File content:", content);

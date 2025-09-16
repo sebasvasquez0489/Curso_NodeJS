@@ -1,0 +1,8 @@
+const fs = require("fs");
+
+const fileName = "example1.txt";
+
+// Crear archivo
+
+fs.writeFileSync(fileName, "Hello world. Este es el archivo de ejemplo");
+console.log("Archivo creado correctamente");
